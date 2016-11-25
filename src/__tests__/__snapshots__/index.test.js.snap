@@ -1,0 +1,20 @@
+exports[`ClickOutsideHOC should pass all props except clickOutsideClassName and onClickOutside to the WrappedComponent 1`] = `
+<MockClass
+  testProp={1}>
+  <div>
+    Mock
+  </div>
+</MockClass>
+`;
+
+exports[`ClickOutsideHOC should render correctly, only accepting a stateless functional component or standard ES6 class component to enhance 1`] = `
+<div>
+  <MockClass />
+</div>
+`;
+
+exports[`ClickOutsideHOC should render correctly, only accepting a stateless functional component or standard ES6 class component to enhance 2`] = `
+<div>
+  <MockStateless />
+</div>
+`;
