@@ -15,6 +15,11 @@ exports[`ClickOutsideHOC should pass all props except clickOutsideClassName and 
 `;
 
 exports[`ClickOutsideHOC should render correctly, only accepting a stateless functional component or standard ES6 class component to enhance 1`] = `
+"Expected \"WrappedComponent\" provided as the first argument to ClickOutsideHOC
+        to be a function. Instead, received object."
+`;
+
+exports[`ClickOutsideHOC should render correctly, only accepting a stateless functional component or standard ES6 class component to enhance 2`] = `
 <div
   style={
     Object {
@@ -25,7 +30,7 @@ exports[`ClickOutsideHOC should render correctly, only accepting a stateless fun
 </div>
 `;
 
-exports[`ClickOutsideHOC should render correctly, only accepting a stateless functional component or standard ES6 class component to enhance 2`] = `
+exports[`ClickOutsideHOC should render correctly, only accepting a stateless functional component or standard ES6 class component to enhance 3`] = `
 <div
   style={
     Object {

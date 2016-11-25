@@ -37,6 +37,7 @@ describe('ClickOutsideHOC', () => {
     });
 
     it('should render correctly, only accepting a stateless functional component or standard ES6 class component to enhance', () => {
+        expect(() => ClickOutsideHOC({})).toThrowErrorMatchingSnapshot();
         expect(shallowToJson(wrapperComposedClass)).toMatchSnapshot();
         expect(shallowToJson(wrapperComposedStateless)).toMatchSnapshot();
     });

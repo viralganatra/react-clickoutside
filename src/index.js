@@ -1,6 +1,13 @@
 import React, { Component, PropTypes } from 'react';
+import invariant from 'invariant';
 
 export default function ClickOutsideHOC(WrappedComponent) {
+    invariant(
+        typeof WrappedComponent === 'function',
+        `Expected "WrappedComponent" provided as the first argument to ClickOutsideHOC
+        to be a function. Instead, received ${typeof WrappedComponent}.`
+    );
+
     const EVENT = 'mousedown';
 
     function getDisplayName() {
