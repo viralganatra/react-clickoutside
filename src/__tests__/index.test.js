@@ -42,7 +42,9 @@ describe('ClickOutsideHOC', () => {
     });
 
     it('should add a className to the div container if the prop clickOutsideClassName is present', () => {
+        wrapperComposedClass.setProps({ clickOutsideClassName: 'test' });
 
+        expect(shallowToJson(wrapperComposedClass.find('div'))).toMatchSnapshot();
     });
 
     it('should pass all props except clickOutsideClassName and onClickOutside to the WrappedComponent', () => {

@@ -12,6 +12,7 @@ export default function ClickOutsideHOC(WrappedComponent) {
 
         static propTypes = {
             onClickOutside: PropTypes.func.isRequired,
+            clickOutsideClassName: PropTypes.string,
         }
 
         componentDidMount() {
@@ -38,11 +39,24 @@ export default function ClickOutsideHOC(WrappedComponent) {
             this.containerNode = node;
         }
 
+        getContainerProps(className) {
+            if (className) {
+                return { className };
+            }
+
+            return {
+                style: {
+                    display: 'inline-block',
+                },
+            };
+        }
+
         render() {
-            const { onClickOutside, ...rest } = this.props;
+            const { clickOutsideClassName, onClickOutside, ...rest } = this.props;
+            const containerProps = this.getContainerProps(clickOutsideClassName);
 
             return (
-                <div ref={this.containerRef}>
+                <div ref={this.containerRef} {...containerProps}>
                     <WrappedComponent {...rest} />
                 </div>
             );
