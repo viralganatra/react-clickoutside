@@ -1,7 +1,7 @@
 # React Click Outside
 
-[![Build Status](https://travis-ci.org/viralganatra/react-clickoutside.svg?branch=master)](https://travis-ci.org/viralganatra/react-clickoutside)
-
+[![build status](https://img.shields.io/travis/viralganatra/react-clickoutside/master.svg?style=flat-square)](https://travis-ci.org/viralganatra/react-clickoutside)
+[![npm version](https://img.shields.io/npm/v/react-clickoutside.svg?style=flat-square)](https://www.npmjs.com/package/react-clickoutside)
 
 This is a higher order component for detecting when a click event has occured outside of a given component.
 
