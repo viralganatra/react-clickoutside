@@ -11,7 +11,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "npm run clean && npm run compile",
-    "compile": "./node_modules/babel-cli/bin/babel.js src -d lib --ignore **/*.test.js",
+    "compile": "babel src -d lib --ignore **/*.test.js",
     "clean": "rimraf lib",
     "lint": "eslint src",
     "test": "jest --onlyChanged",
