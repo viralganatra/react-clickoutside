@@ -15,7 +15,8 @@
     "clean": "rimraf lib",
     "lint": "eslint src",
     "test": "jest --onlyChanged",
-    "test:ci": "npm run lint && npm run test"
+    "test:ci": "npm run lint && npm run test",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "babel-runtime": "^6.18.0",
