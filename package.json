@@ -1,6 +1,6 @@
 {
   "name": "react-clickoutside",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Higher order component for detecting when a click event has occured outside of a given component",
   "repository": {
     "url": "https://github.com/viralganatra/react-clickoutside.git",
