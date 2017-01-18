@@ -5,7 +5,7 @@ export default function ClickOutsideHOC(WrappedComponent) {
     invariant(
         typeof WrappedComponent === 'function',
         `Expected "WrappedComponent" provided as the first argument to ClickOutsideHOC
-        to be a function. Instead, received ${typeof WrappedComponent}.`
+        to be a function. Instead, received ${typeof WrappedComponent}.`,
     );
 
     const EVENT = 'mousedown';
