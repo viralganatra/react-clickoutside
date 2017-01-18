@@ -91,7 +91,7 @@ In addition using findDOMNode is now discouraged and the React team has plans to
 
 ## Compatibility
 
-React v15.4.0 is a peer dependency.
+React v15 is a peer dependency.
 
 ## License
 
