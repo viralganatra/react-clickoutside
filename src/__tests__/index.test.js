@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { shallow, mount } from 'enzyme';
-import { shallowToJson, mountToJson } from 'enzyme-to-json';
 import ClickOutsideHOC from '../index';
 
 class MockClass extends Component {
@@ -38,20 +36,20 @@ describe('ClickOutsideHOC', () => {
 
     it('should render correctly, only accepting a stateless functional component or standard ES6 class component to enhance', () => {
         expect(() => ClickOutsideHOC({})).toThrowErrorMatchingSnapshot();
-        expect(shallowToJson(wrapperComposedClass)).toMatchSnapshot();
-        expect(shallowToJson(wrapperComposedStateless)).toMatchSnapshot();
+        expect(wrapperComposedClass).toMatchSnapshot();
+        expect(wrapperComposedStateless).toMatchSnapshot();
     });
 
     it('should add a className to the div container if the prop clickOutsideClassName is present', () => {
         wrapperComposedClass.setProps({ clickOutsideClassName: 'test' });
 
-        expect(shallowToJson(wrapperComposedClass.find('div'))).toMatchSnapshot();
+        expect(wrapperComposedClass.find('div')).toMatchSnapshot();
     });
 
     it('should pass all props except clickOutsideClassName and onClickOutside to the WrappedComponent', () => {
         const wrapper = mount(<ComposedClass onClickOutside={noop} testProp={1} />);
 
-        expect(mountToJson(wrapper.find(MockClass))).toMatchSnapshot();
+        expect(wrapper.find(MockClass)).toMatchSnapshot();
     });
 
     it('should only call the onClickOutside function if the mousedown event is outside the component', () => {

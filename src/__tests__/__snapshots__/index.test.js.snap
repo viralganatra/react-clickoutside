@@ -1,13 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`ClickOutsideHOC should add a className to the div container if the prop clickOutsideClassName is present 1`] = `
 <div
-  className="test">
+  className="test"
+>
   <MockClass />
 </div>
 `;
 
 exports[`ClickOutsideHOC should pass all props except clickOutsideClassName and onClickOutside to the WrappedComponent 1`] = `
 <MockClass
-  testProp={1}>
+  testProp={1}
+>
   <div>
     Mock
   </div>
@@ -15,7 +19,7 @@ exports[`ClickOutsideHOC should pass all props except clickOutsideClassName and 
 `;
 
 exports[`ClickOutsideHOC should render correctly, only accepting a stateless functional component or standard ES6 class component to enhance 1`] = `
-"Expected \"WrappedComponent\" provided as the first argument to ClickOutsideHOC
+"Expected \\"WrappedComponent\\" provided as the first argument to ClickOutsideHOC
         to be a function. Instead, received object."
 `;
 
@@ -25,7 +29,8 @@ exports[`ClickOutsideHOC should render correctly, only accepting a stateless fun
     Object {
       "display": "inline-block",
     }
-  }>
+  }
+>
   <MockClass />
 </div>
 `;
@@ -36,7 +41,8 @@ exports[`ClickOutsideHOC should render correctly, only accepting a stateless fun
     Object {
       "display": "inline-block",
     }
-  }>
+  }
+>
   <MockStateless />
 </div>
 `;
