@@ -12,6 +12,7 @@
         "indent": [0, 4],
         "new-cap": [0, { "capIsNew": false }],
         "no-unused-expressions": [0, { "allowShortCircuit": true }],
+        "no-unused-vars": [1, { "ignoreRestSiblings": true } ],
 
         "react/no-unused-prop-types": [2, { "skipShapeProps": true }],
         "react/require-default-props": [0],
@@ -21,14 +22,10 @@
         "react/jsx-indent-props": [2, 4],
 
         "jsx-a11y/label-has-for": [0],
-        "jsx-a11y/no-static-element-interactions": [0],
-
-        "no-unused-vars": [0],
-        "no-unused-vars-rest/no-unused-vars": [2, {"ignoreDestructuredVarsWithRest": true}]
+        "jsx-a11y/no-static-element-interactions": [0]
     },
     "plugins": [
         "babel",
-        "react",
-        "no-unused-vars-rest"
+        "react"
     ]
 }
