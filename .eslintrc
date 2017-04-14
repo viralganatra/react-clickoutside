@@ -12,6 +12,7 @@
         "indent": [0, 4],
         "new-cap": [0, { "capIsNew": false }],
         "no-unused-expressions": [0, { "allowShortCircuit": true }],
+        "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
         "no-unused-vars": [1, { "ignoreRestSiblings": true } ],
 
         "react/no-unused-prop-types": [2, { "skipShapeProps": true }],
