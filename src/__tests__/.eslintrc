@@ -1,18 +1,13 @@
 {
-    "env": {
-        "jest": true
-    },
     "globals": {
         "shallow": true,
         "mount": true,
         "render": true
     },
     "rules": {
-        "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
-        "no-multi-assign": [0],
+        "no-multi-assign": ["off"],
 
-        "react/prefer-stateless-function": [0],
-        "react/prop-types": [2, { "ignore": ["nodeRef"] }],
-        "react/no-multi-comp": [0]
+        "react/prop-types": ["error", { "ignore": ["nodeRef"] }],
+        "react/no-multi-comp": ["off"]
     }
 }
