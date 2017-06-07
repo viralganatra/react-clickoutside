@@ -42,6 +42,7 @@
     },
     "plugins": [
         "babel",
-        "react"
+        "react",
+        "jest"
     ]
 }
