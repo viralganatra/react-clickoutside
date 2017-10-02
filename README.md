@@ -7,6 +7,10 @@ This is a higher order component for detecting when a click event has occured ou
 
 It supports both class based components and stateless functional components.
 
+## Demo
+
+https://viralganatra.github.io/demos/react-clickoutside/
+
 
 ## Installation
 
@@ -22,33 +26,58 @@ or `NPM`
 npm install --save react-clickoutside
 ````
 
+## New in Version 2
+
+In addition to the existing higher order component, this library now exports a new component, built using the 'function as child component' pattern.
+
+See: https://medium.com/merrickchristensen/function-as-child-components-5f3920a9ace9
+
+The higher order component now accepts a params object, meaning any properties can be added to the container div.
+
+Introduced Rollup to export two packages; one for Common JS and one for ESM Modules.
+
 ## How to use
 
 ### Basic functionality
 
+#### Using the Function as Child Component approach
+
 ````js
 import React from 'react';
+import { ClickOutside } from 'react-clickoutside';
 
-const MyComponent = () => {
-    return <div>My Component</div>;
-}
+const MyComponent = () => (
+    <div>
+        <p>My Component</p>
+        <ClickOutside>
+            {({ hasClickedOutside }) => (
+                <div>
+                    <p>Click Outside</p>
+                    {hasClickedOutside && <div>Has Clicked Outside</div>}
+                </div>
+            )}
+        </ClickOutside>
+    </div>
+);
 
 export default MyComponent;
 ````
 
+#### Using the Higher Order Component
+
 ````js
 import React, { Component } from 'react';
-import ClickOutside from 'react-clickoutside';
+import { withClickOutside } from 'react-clickoutside';
 import MyComponent from './my-component';
 
-export default class MyComposedClass extends Component {
-    onClickOutside() {
+const ComposedComponent = withClickOutside()(MyComponent);
+
+export default class Demo extends Component {
+    onClickOutside = () => {
         // Do something...
     }
 
     render() {
-        const ComposedComponent = ClickOutside(MyComponent);
-
         return (
             <ComposedComponent
                 onClickOutside={this.onClickOutside}
@@ -62,26 +91,38 @@ The composed component must have the attribute onClickOutside which should be a 
 
 ### Customising
 
-This higher order function will add a wrapping `div` element to your component. By default it will add a style with `display: inline-block`. If you wish to use a class name you can use the clickOutsideClassName attribute.
+The Component will add a wrapping `div` element to your component. You can add any attributes to this:
+
+#### Using the Function as Child Component component
 
 ````js
-export default class MyComposedClass extends Component {
-    render() {
-        const ComposedComponent = ClickOutside(MyComponent);
+const MyComponent = () => (
+    <div>
+        <p>My Component</p>
+        <ClickOutside className="my-class">
+            {({ hasClickedOutside }) => (
 
-        return (
-            <ComposedComponent
-                onClickOutside={this.onClickOutside}
-                clickOutsideClassName="my-class-name"
-            />
-        );
-    }
-}
+            )}
+        </ClickOutside>
+    </div>
+);
+````
+
+#### Using the Higher Order Component
+
+````js
+import React, { Component } from 'react';
+import { withClickOutside } from 'react-clickoutside';
+import MyComponent from './my-component';
+
+const ComposedComponent = withClickOutside({
+    className: 'my-class',
+})(MyComponent);
 ````
 
 ## Notes
 
-This higher order function will add a wrapping `div` element to your component. This is because internally we need to obtain a reference to the container DOM node and use that to calculate if the clicked target node is a child of the container. The problem is that while we can obtain a reference to the node using the ref attribute when the decorated component exposes a regular HTML element, when the ref attribute is used on a custom component the ref callback receives the mounted instance of the component.
+Both components will add a wrapping `div` element to your component. This is because internally we need to obtain a reference to the container DOM node and use that to calculate if the clicked target node is a child of the container. The problem is that while we can obtain a reference to the node using the ref attribute when the decorated component exposes a regular HTML element, when the ref attribute is used on a custom component the ref callback receives the mounted instance of the component.
 
 <https://facebook.github.io/react/docs/refs-and-the-dom.html>
 
@@ -91,7 +132,7 @@ In addition using findDOMNode is now discouraged and the React team has plans to
 
 ## Compatibility
 
-React v15 is a peer dependency.
+React v15 or v16 is a peer dependency.
 
 ## License
 

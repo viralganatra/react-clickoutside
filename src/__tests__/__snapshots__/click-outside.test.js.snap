@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Click Outside Render should add any custom properties to the container div 1`] = `
+<ClickOutside
+  className="foo"
+>
+  <div
+    className="foo"
+  />
+</ClickOutside>
+`;
+
+exports[`Click Outside Render should detect the click event inside of the component 1`] = `
+<div>
+  <p
+    className="title"
+  >
+    Title
+  </p>
+  <ClickOutside>
+    <div>
+      <div
+        className="container"
+      >
+        Has not clicked outside
+      </div>
+    </div>
+  </ClickOutside>
+</div>
+`;
+
+exports[`Click Outside Render should detect the click event outside of the component 1`] = `
+<div>
+  <p
+    className="title"
+  >
+    Title
+  </p>
+  <ClickOutside>
+    <div>
+      <div
+        className="container"
+      >
+        Clicked outside
+      </div>
+    </div>
+  </ClickOutside>
+</div>
+`;
