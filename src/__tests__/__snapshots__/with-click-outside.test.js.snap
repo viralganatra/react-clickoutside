@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Click Outside Higher Order Component should add any custom properties to the container div 1`] = `
+<div
+  className="foo"
+>
+  <MockComponent />
+</div>
+`;
+
+exports[`Click Outside Higher Order Component should throw an error if called incorrectly 1`] = `
+"Expected \\"WrappedComponent\\" provided as the first argument to ClickOutsideHOC
+            to be a function. Instead, received undefined."
+`;
