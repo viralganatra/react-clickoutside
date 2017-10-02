@@ -7,6 +7,10 @@ This is a higher order component for detecting when a click event has occured ou
 
 It supports both class based components and stateless functional components.
 
+## Demo
+
+https://viralganatra.github.io/demos/react-clickoutside/
+
 
 ## Installation
 
