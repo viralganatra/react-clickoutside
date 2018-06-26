@@ -22,6 +22,7 @@ module.exports = {
 
         'import/no-extraneous-dependencies': ['error', { 'devDependencies': true }],
 
+        'react/destructuring-assignment': ['off'],
         'react/no-unused-prop-types': ['error', { 'skipShapeProps': true }],
         'react/require-default-props': ['warn'],
         'react/no-array-index-key': ['warn'],
@@ -31,6 +32,7 @@ module.exports = {
         'react/jsx-indent-props': ['error', 4],
         'react/jsx-boolean-value': ['error', 'always'],
         'react/jsx-no-bind': ['error'],
+        'react/jsx-one-expression-per-line': ['off'],
 
         'react/sort-comp': ['error', {
             'order': [

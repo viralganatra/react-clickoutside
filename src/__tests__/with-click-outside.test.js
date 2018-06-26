@@ -56,7 +56,7 @@ describe('Click Outside Higher Order Component', () => {
 
         wrapper.unmount();
 
-        expect(global.removeEventListener.mock.calls[3][0]).toBe(EventName);
+        expect(global.removeEventListener.mock.calls[4][0]).toEqual(EventName);
     });
 
     it('should add any custom properties to the container div', () => {

@@ -27,9 +27,9 @@ describe('Click Outside Render', () => {
                 <p className="title">Title</p>
                 <ClickOutside>
                     {({ hasClickedOutside }) => {
-                        const text = hasClickedOutside ?
-                            'Clicked outside' :
-                            'Has not clicked outside';
+                        const text = hasClickedOutside
+                            ? 'Clicked outside'
+                            : 'Has not clicked outside';
 
                         return <div className="container">{text}</div>;
                     }}
@@ -62,7 +62,7 @@ describe('Click Outside Render', () => {
     it('should unregister the event listener when the component unmounts', () => {
         wrapper.unmount();
 
-        expect(global.removeEventListener.mock.calls[3][0]).toBe(EventName);
+        expect(global.removeEventListener.mock.calls[4][0]).toEqual(EventName);
     });
 
     it('should add any custom properties to the container div', () => {
